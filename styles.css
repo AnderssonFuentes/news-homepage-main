@@ -1,0 +1,324 @@
+/* ------------------  RESET  --------------*/
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  line-height: 1.8; /*  ------  TAMAÑO EN REM Ó EM?  ----- */
+  color: var(--Dark-grayish-Blue);
+}
+
+/* ------------------  VARIABLES  --------------*/
+:root {
+  --Soft-Orange: hsl(35, 77%, 62%);
+  --Soft-Red: hsl(5, 85%, 63%);
+  --Off-White: hsl(36, 100%, 99%);
+  --Grayish-Blue: hsl(233, 8%, 79%);
+  --Dark-grayish-Blue: hsl(236, 13%, 42%);
+  --Very-Dark-Blue: hsl(240, 100%, 5%);
+}
+
+/* ------------------  BODY  --------------*/
+body {
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 4rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--Off-White);
+}
+
+/* ------------------  HEADER  --------------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  margin: 1rem 0 1rem;
+}
+
+/* ------------------  menu close mobile  --------------*/
+.header nav #menu-close {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  z-index: 99999;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+/* ------------------  menu button mobile  --------------*/
+/* .header nav {
+  display: none;
+} */
+
+.header nav {
+  opacity: 0;
+  z-index: -999;
+  transition: all 0.3s ease-in-out;
+}
+
+.header nav.open {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 75vw;
+  background-color: var(--Off-White);
+  padding: 1.25rem;
+  opacity: 1;
+  /* box-shadow: 4px 4px 4rem rgba(0, 0, 0, 0.5); */
+  z-index: 9999999999;
+}
+
+.header nav ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header nav ul li {
+  margin: 1.5rem 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header nav ul li:hover {
+  color: var(--Soft-Red);
+}
+
+/* ------------------  menu button  --------------*/
+.header .menu-button button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ------------------  SECTION  --------------*/
+/* ------------------  PART 1  --------------*/
+.showcase {
+  padding: 1.25rem;
+  padding-top: 0;
+}
+
+.showcase h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  word-break: break-all;
+  color: var(--Very-Dark-Blue);
+  margin: 1rem 0;
+}
+
+.showcase div:first-child article p {
+  margin-bottom: 1rem;
+}
+
+.showcase div:first-child article button {
+  background-color: var(--Soft-Red);
+  color: var(--Off-White);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.showcase div:first-child article button:hover {
+  cursor: pointer;
+  background-color: var(--Dark-grayish-Blue);
+}
+
+/* ------------------  PART 2  --------------*/
+.showcase > div:last-child {
+  background-color: var(--Very-Dark-Blue);
+  margin-top: 2rem;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.showcase > div:last-child h2 {
+  color: var(--Soft-Orange);
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.showcase > div:last-child article {
+  padding: 1.25rem 0;
+}
+
+.showcase > div:last-child article:not(:last-child) {
+  border-bottom: 1px solid var(--Dark-grayish-Blue);
+}
+
+.showcase > div:last-child h3 {
+  color: var(--Off-White);
+  margin-bottom: 0.5rem;
+}
+.showcase > div:last-child h3:hover {
+  cursor: pointer;
+  color: var(--Soft-Orange);
+}
+
+/* ------------------  PART 3  --------------*/
+.cards {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(1 1fr);
+  gap: 2.5rem;
+}
+
+.cards article {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cards article img {
+  width: 150px;
+}
+
+.cards article span {
+  color: var(--Dark-grayish-Blue);
+  font-weight: 800;
+  font-size: 2rem;
+  opacity: 75%;
+}
+
+.cards article h4 {
+  font-size: 1.25rem;
+  color: var(--Very-Dark-Blue);
+  margin: 1rem 0;
+}
+
+/* .cards article p {
+  font-size: 0.7rem;
+} */
+
+/* ------------------  FOOTER  --------------*/
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: var(--Soft-Red);
+  text-decoration: none;
+}
+
+/* ------------------  MEDIA QUERIES  --------------*/
+/* ------------------  TABLET  --------------*/
+/* ------------------  >(768px)  --------------*/
+@media (min-width: 768px) {
+  /* ------------------  PART 3  --------------*/
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+  }
+}
+
+/* ------------------  DESKTOP  --------------*/
+/* ------------------  >(1024px)  --------------*/
+@media (min-width: 1024px) {
+  /* ------------------  HEADER  --------------*/
+  .header {
+    padding: 2rem 1.25rem;
+  }
+
+  .header nav {
+    opacity: 1;
+    z-index: auto;
+    width: 100%;
+  }
+
+  .header nav.open {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    z-index: auto;
+  }
+
+  .header nav #menu-close {
+    display: none;
+  }
+
+  .header nav ul {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    transform: translateY(0%);
+  }
+
+  .header nav ul li {
+    margin: 0;
+  }
+
+  .header .menu-button button {
+    display: none;
+  }
+
+  /* ------------------  SECTION  --------------*/
+  /* ------------------  PART 1  --------------*/
+  .showcase {
+    display: flex;
+    gap: 2rem;
+  }
+
+  /* ------------------  article 1  --------------*/
+  .showcase > div:first-child article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    place-items: center;
+    margin-top: 2rem;
+  }
+
+  .showcase h1 {
+    font-size: 3rem;
+  }
+
+  /* ------------------  PART 2  --------------*/
+  .showcase div:last-child {
+    margin-top: 0;
+  }
+
+  /* ------------------  PART 3  --------------*/
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* .cards article div {
+    display: flex;
+    flex-direction: column;
+  } */
+}
